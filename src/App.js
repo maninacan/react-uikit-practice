@@ -12,10 +12,6 @@ UIkit.notification('Hello world.');
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.refs.ukGrid.setAttribute('uk-grid', '');
-  }
-
   render() {
     return (
       <div className='App'>

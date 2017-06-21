@@ -3,6 +3,7 @@ import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import UKAccordion from './components/UKAccordion';
 import {UKModalButton, UKModal} from './components/UKModal';
+import UKCascadingMenu from './components/UKCascadingMenu';
 import 'uikit/dist/css/uikit.min.css';
 import './App.css';
 
@@ -11,10 +12,6 @@ UIkit.use(Icons);
 UIkit.notification('Hello world.');
 
 class App extends Component {
-
-  componentDidMount() {
-    this.props.refs.ukGrid.setAttribute('uk-grid', '');
-  }
 
   render() {
     return (
@@ -69,6 +66,31 @@ class App extends Component {
             <button className="uk-button uk-button-primary" type="button">Save</button>
           </div>
         </UKModal>
+        <UKCascadingMenu>
+          <ul className="uk-list">
+            <li>
+              <UKCascadingMenu>
+                <ul className="uk-list">
+                  <li>
+                    Item 4
+                  </li>
+                  <li>
+                    Item 5
+                  </li>
+                  <li>
+                    Item 6
+                  </li>
+                </ul>
+              </UKCascadingMenu>
+            </li>
+            <li>
+              Item 2
+            </li>
+            <li>
+              Item 3
+            </li>
+          </ul>
+        </UKCascadingMenu>
       </div>
     );
   }
